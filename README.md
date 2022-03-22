@@ -1,1 +1,1 @@
-https://tanyalev06.github.io/rsschool-cv/
+https://tanyalev06.github.io/portfolio/
