@@ -1,0 +1,632 @@
+* {
+    box-sizing: border-box; /*границы и внутренние отступы будут учитываться в значениях, которые вы указываете в ширине и высоте элемента*/
+  }
+
+  html {                    /*Чтобы прокрутка происходила плавно  */
+    scroll-behavior: smooth; 
+    max-height:100%; 
+    max-width:100%;
+  }
+
+  body {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #000000;
+  }
+  
+.wrapper {                             /* padding – это отступ от содержимого до края блока, то margin – это расстояние от одного блока до другого */
+  position: relative;                  /*для общего фона 2х блоков*/
+  font-family: 'Inter', sans-serif;
+  font-family: 'Merriweather', serif;
+  display: flex; 
+  flex-direction: column;             /*выравнивание по вертикали*/
+  justify-content: space-between;     /*все элементы размещаются на максимальном расстоянии друг от друга, крайние прижаты к границам родителя*/
+  max-width: 1440px;                      /*ограничивает ширину контента на больших экранах */
+  margin: 0 auto;                       /* центрирует контейнер по горизонтали */
+  padding: 0 auto;                    /*добавляет внутренние отступы по бокам, необходимые для того, чтобы контент не прилипал к краям при уменьшении ширины экрана*/
+  }
+
+/*------------------------------ Header styles start --------------------------------*/
+.logo {
+  background-size: contain;
+  background-repeat: no-repeat;  
+  transition: 0.3s;
+}
+.logo:hover {
+  filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
+    contrast(87%);
+}
+
+.header {
+  position: absolute;      /*для общего фона 2х блоков*/
+  width: 100%;
+  padding: 20px;
+  padding-top: 0;
+}
+
+.header-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav {
+  margin-left: auto;
+}
+
+/*Стилизация списка - Убираем стандартные маркеры:*/
+.nav-list {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  list-style-type: none;
+}
+
+/*Добавляем отступы между элементами списка:*/
+.nav-link {
+  padding: 0 15px;
+  line-height: 50px;
+  text-decoration: none;
+  color: #BDAE82;
+  font-size: 20px;
+  font-family: 'Inter', 'normal';
+}
+
+.lang{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.btn-en, .btn-ru {
+  background:transparent;
+  color: #BDAE82;
+  font-size: large;
+  cursor: pointer;
+}
+
+.header-burger {
+  display: none;
+}
+
+/*------------------------------ Header styles end --------------------------------*/
+
+.main {
+  background-color: black;
+  background-size: cover;
+}
+
+/*------------------------------ Hero styles start --------------------------------*/
+.hero {
+  background-image: url(assets/img/bg.jpg);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  height: 910px;
+}
+
+.description-main {
+  padding-top: 220px;
+  max-width: 500px;
+  padding-left: 80px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.button-hero {
+  padding-top: 25px;
+}
+
+p.p-main {
+  line-height: 40px;
+}
+
+.p-hero {
+  padding-top: 10px;
+}
+
+.div-title {
+  overflow: hidden;                      /* Чтобы спрятать часть линий, которые будут вылазить за пределы блока */
+  text-align: center;                    /* Выравнивание заголовка по центру, можно использовать left, right */
+  font-size: 30px;
+  padding-top: 100px;
+}
+
+h2 {
+  font-size: 40px;
+  line-height: 80px;
+}
+
+.div-title h2 {
+  display: inline-block;
+  vertical-align: middle;
+  color: #BDAE82;
+}
+
+.div-title:before,
+.div-title:after {
+  content: "";                            /*чтобы псевдоэлементы не появились на сайте */
+  display: inline-block;                   /*линии будут строчно-блочные и выравнивание по высоте - по центру */
+  vertical-align: middle;
+  width: 20%;                               /*ширина 20% и выбираем высоту линии 2 пикселя */
+  height: 2px;
+  background-color:#BDAE82;                /*цвет для линии */
+  position: relative;                        /*возможность ипсевдоэлементов изменять позицию линии, для создания отступов от текста */
+}
+
+.div-title:before {
+  margin-left: -100%;                         /* Смещаем левую линию на 100% влево, чтобы линия встала рядом с текстом слева */
+  left: -14px;                                 /* Указываем в пикселях отступ линии от текста заголовка */
+}
+
+.div-title:after {
+  margin-right: -100%;
+  right: -14px;
+}
+
+.btn-main {
+  width: 220px;
+  height: 55px;
+  color: #000000;
+  background-color: #BDAE82;
+}
+
+.btn {
+  width: 220px;
+  height: 55px;
+  color: #BDAE82;
+  background-color: #000000;
+}
+
+.portfolio-btn-winter, .portfolio-btn-spring, .portfolio-btn-summer, .portfolio-btn-autumn{
+  width: 220px;
+  height: 55px;
+  color: #BDAE82;
+  background-color: #000000;
+}
+
+.portfolio-btn-winter:focus,
+.portfolio-btn-spring:focus,
+.portfolio-btn-summer:focus,
+.portfolio-btn-autumn:focus {
+  vertical-align: middle;
+  color: #000000;
+  background-color: #BDAE82;
+}
+
+h1 {
+  color: #FFFFFF;
+  font-family: 'Merriweather', bold;
+  font-size: 60px;
+}
+/*------------------------------ Hero styles end --------------------------------*/
+/*------------------------------ Skills styles start --------------------------------*/
+.skills {
+  background-color: black;
+  background-size: cover;
+}
+
+p, h3 {
+  color: #BDAE82;
+}
+
+.skills-div-grid {
+  display: grid;
+  max-width: 1400px;
+  height: 242px;
+  grid-template-columns: repeat(4, 1fr); /*количество карточек и их размер*/
+  grid-column-gap: 40px;/*отступы между карточками*/
+  margin-top: 60px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.skills-card {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+}
+
+.img-skills {
+  height: 50px;
+  width: 62px;
+}
+/*------------------------------ Skills styles end --------------------------------*/
+/*------------------------------ Portfolio styles start --------------------------------*/
+  .portfolio-flex-seasons {
+    display: flex;
+    justify-content: space-between;   
+    flex-wrap: wrap;
+    max-width: 895px;
+    height: 55px;
+    margin: auto;
+    margin-bottom: 60px;
+  }
+
+  .portfolio-flex-photos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 0px;
+  }
+
+  .img-portfolio {
+    height: 560px;
+    width: 450px;
+  }
+/*------------------------------ Portfolio styles end --------------------------------*/
+/*------------------------------ Video styles start --------------------------------*/
+.div-video {
+    /* background: url(assets/img/video-player.jpg);
+    background-repeat: no-repeat; */
+    padding-left: 40px;
+    padding-right: 40px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 705px;
+    /* overflow: hidden; */
+  }
+
+ .player {
+  width: 100%;
+ }
+
+  .img-btn-player {
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    transform: translate(-50%);
+    bottom: 40%;
+    left: 50%;
+  }
+
+  .img-btn-player:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+}
+
+.btn-player.active {
+  display: none;
+}
+  
+/* This css is only applied when fullscreen is active. */
+.div-video:fullscreen {
+  max-width: none;
+  width: 100%;
+}
+
+.div-video:-webkit-full-screen {
+  max-width: none;
+  width: 100%;
+}
+
+.player__button {
+  background:none;
+  border:0;
+  line-height:2;
+  color:#BDAE82;
+  text-align: center;
+  outline:0;
+  padding: 0;
+  cursor:pointer;
+  max-width:50px;
+}
+
+.player__button:hover {
+  filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
+    contrast(87%);
+}
+
+.player__button:focus {
+  border-color: #BDAE82;
+}
+
+.player__button__volume {
+  background: url("assets/svg/volume.svg") center no-repeat;
+  color:#BDAE82;
+  background-size: contain;
+  border: none;
+  cursor: pointer;
+  max-width:50px;
+}
+
+.mute {
+  background: url("assets/svg/mute.svg") center no-repeat;
+  color:#BDAE82;
+  background-size: contain;
+  border: none;
+  cursor: pointer;
+  max-width:50px;
+}
+
+.player__button__volume:hover {
+  filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
+    contrast(87%);
+}
+
+.player__slider {
+  width:10px;
+  height:30px;
+}
+
+.player__controls {
+  display:flex;
+  position: absolute;
+  bottom:0;
+  width: 100%;
+  padding-left: 40px;
+  padding-right: 40px;
+  transform: translateY(100%) translateY(-5px);
+  transition:all .3s;
+  flex-wrap:wrap;
+  background:rgba(0,0,0,0.1);
+}
+
+.player:hover .player__controls {
+  transform: translateY(0);
+}
+
+.player:hover .progress {
+  height:15px;
+}
+
+.player__controls > * {
+  flex:1;
+}
+
+.progress {
+  flex:10;
+  position: relative;
+  display:flex;
+  flex-basis:100%;
+  height:5px;
+  transition:height 0.3s;
+  background:#BDAE82(0,0,0,0.5);
+  cursor:ew-resize;
+}
+
+.progress__filled {
+  width:50%;
+  background:#BDAE82;
+  flex:0;
+  flex-basis:50%;
+}
+
+/* unholy css to style input type="range" */
+
+input[type=range] {
+  -webkit-appearance: none;
+  background:transparent;
+  width: 100%;
+  margin: 0 5px;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0 0 1px rgba(13, 13, 13, 0);
+  background: rgba(255,255,255,0.8);
+  border-radius: 1.3px;
+  border: 0.2px solid rgba(1, 1, 1, 0);
+}
+input[type=range]::-webkit-slider-thumb {
+  height: 15px;
+  width: 15px;
+  border-radius: 50px;
+  background: #BDAE82;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -3.5px;
+  box-shadow:0 0 2px #BDAE82(0,0,0,0.2);
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #f3e7c5;
+}
+
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0 0 1px rgba(13, 13, 13, 0);
+  background: #ffffff;
+  border-radius: 1.3px;
+  border: 0.2px solid rgba(1, 1, 1, 0);
+}
+input[type=range]::-moz-range-thumb {
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(13, 13, 13, 0);
+  height: 15px;
+  width: 15px;
+  border-radius: 50px;
+  background: #BDAE82;
+  cursor: pointer;
+}
+
+/*------------------------------ Video styles end --------------------------------*/
+/*------------------------------ Price styles start --------------------------------*/
+.div-price {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  margin-left: 20px;
+  margin-right: 20px;
+  gap: 25px;
+}
+
+.div-price-card {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  width: 450px;
+  height: 505px;
+  border-style: solid;
+  border-color: #BDAE82;
+  padding: 43px;
+}
+/*------------------------------ Price styles end --------------------------------*/
+/*------------------------------ Contacts styles start --------------------------------*/
+.contacts {
+  background: url(assets/img/contacts.jpg);
+  background-repeat: no-repeat;
+  height: 700px;
+}
+/*------------------------------ Contacts styles end --------------------------------*/
+/*------------------------------ Fotter styles start --------------------------------*/
+  footer {
+    background-color: #000000;
+    height: 150px;
+    padding: 20px;
+  }
+
+  .div-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .left-futter {
+    height: 50px;
+    width: 182px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .center-futter {
+    height: 50px;
+    width: 211px;
+  }
+
+  .right-footer {
+    height: 50px;
+    width: 188px;
+  }
+/*------------------------------ Fotter styles end --------------------------------*/
+.github, .rs {
+  color: #BDAE82;
+}
+
+/*-------------------------------@media--------------------------------------------*/
+@media (max-width: 768px) {
+  .wrapper {
+    margin: 0 auto;
+  }
+
+  .header {
+    overflow-x: hidden;
+  }
+
+  h1 {
+    font-size: 32px;
+    line-height: 64px;
+  }
+
+  .hero {
+    background-image: url(assets/img/bg-768.jpg);
+    min-height: 590px;
+  }
+
+  .description-main {
+    padding-top: 100px;
+    max-width: 500px;
+    max-height: 270px;
+    padding-left: 60px;
+  }
+
+  .p-hero {
+    padding-top: 20px;
+  }
+
+  .button-hero {
+    padding-top: 60px;
+  }  
+
+  .skills {
+    height: 729px;
+  }
+
+  .skills-div-grid {
+  height: 520px;
+  grid-template-columns: repeat(2, 1fr); 
+  grid-template-rows: repeat(2, 1fr);
+}
+
+    h2 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .div-video {
+    height: 418px;
+  }
+
+  .div-price-card {
+    width: 420px;
+  }
+
+  .header-burger {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 20px;
+  }
+
+  .header-burger::before,
+  .header-burger::after {
+    content: "";
+    background-color: #FFFFFF;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+  }  
+
+  .header-burger span {
+    position: absolute;
+    background-color: #FFFFFF;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    top: 9px;
+  }
+
+  .header-burger::before {
+    top: 0;
+  }
+
+  .header-burger::after {
+    bottom: 0;
+  }
+
+  .nav {
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .nav-list {
+    display: block;
+  }
+
+  .portfolio-flex-seasons {
+    display: flex;
+    justify-content: space-between;   
+    flex-wrap: wrap;
+    width: 445px;
+    height: 115px;
+  }
+}
