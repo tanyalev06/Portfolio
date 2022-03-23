@@ -1,1 +1,1 @@
-https://tanyalev06.github.io/portfolio/
+https://tanyalev06.github.io/Portfolio/portfolio
